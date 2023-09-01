@@ -1,7 +1,7 @@
 <script setup>
 import HeaderApp from '../components/Header.vue';
 import SearchInfo from '../components/SearchInfo.vue';
-import Card from '../components/Card.vue';
+import Card from '../components/CardFood.vue';
 import { useSearchStore } from '../stores/search';
 
 const { setSearch } = useSearchStore();
@@ -22,15 +22,3 @@ setSearch(true);
     </div>
   </div> 
 </template>
-
-<style>
-  .card {
-    display: flex;
-    flex-direction: column;
-    height: 100%;
-  }
-
-  .card-body {
-    flex-grow: 1;
-  }
-</style>

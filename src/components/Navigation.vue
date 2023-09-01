@@ -13,10 +13,10 @@
       <div class="col-md-8 nav-menu">
         <ul class="d-flex gap-5 pt-3 pb-3 ps-0 pe-0 justify-content-md-start justify-content-center">
           <li class="nav-item">
-            <router-link to="/" class="nav-link active-menu text-white" aria-current="page" >Home</router-link>
+            <router-link to="/" :class="[{'nav-link': true, 'active-menu': search === true, 'text-secondary': search === false}]" aria-current="page" >Home</router-link>
           </li>
           <li class="nav-item">
-            <router-link to="/categories" class="nav-link text-secondary">Categories</router-link>
+            <router-link to="/categories" :class="[{'nav-link': true, 'active-menu': search === false, 'text-secondary': search === true}]">Categories</router-link>
           </li>
         </ul>
       </div>
@@ -32,6 +32,7 @@
 <style>
   .nav-item a.nav-link.active-menu {
     font-weight: 700;
+    color: white;
   }
   .form-control::placeholder {
       color: gray;

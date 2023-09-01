@@ -9,6 +9,12 @@ const router = createRouter({
       component: () => import('../views/HomeView.vue'),
       meta: { title: 'RecFinder' }
     },
+    {
+      path: '/categories',
+      name: 'category',
+      component: () => import('../views/CategoryView.vue'),
+      meta: { title: 'RecFinder - Categories' }
+    }
   ]
 })
 

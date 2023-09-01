@@ -1,6 +1,6 @@
 <template>
     <div class="col-6 col-md-4 col-lg-2">
-        <div class="d-flex flex-column food-card bg-navy">
+        <a href="" class="d-flex flex-column food-card bg-navy">
             <div class="food-card-img">
                 <img src="https://www.shutterstock.com/image-photo/thai-food-salted-fish-spicy-260nw-148689017.jpg" alt="food_thumb">
             </div>
@@ -8,7 +8,7 @@
                 <p class="p-0">Teriyaki Chicken Casserole</p>
                 <span class="badge bg-danger">Japanese</span>
             </div>
-        </div>
+        </a>
     </div>
 </template>
 
@@ -18,6 +18,7 @@
         color: white;
         height: 20rem;
         border-radius: .5rem;
+        text-decoration: none;
     }
     .food-card img {
         object-fit: cover;
