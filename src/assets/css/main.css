@@ -1,6 +1,11 @@
 @import './bootstrap.css';
+@import './header.css';
 @import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&display=swap');
 
 * {
     font-family: 'Lato', sans-serif;
+}
+
+li {
+    list-style-type: none;
 }
