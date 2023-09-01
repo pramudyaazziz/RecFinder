@@ -1,5 +1,11 @@
 <script setup>
     import { RouterLink } from 'vue-router';
+    import { defineProps } from 'vue';
+    import AreaBadge from './badges/AreaBadge.vue';
+
+    const props = defineProps({
+        data: Object
+    });
 </script>
 
 <template>
@@ -9,8 +15,8 @@
                 <img src="https://www.shutterstock.com/image-photo/thai-food-salted-fish-spicy-260nw-148689017.jpg" alt="food_thumb">
             </div>
             <div class="food-card-body p-2">
-                <p class="p-0">Teriyaki Chicken Casserole</p>
-                <span class="badge bg-danger">Japanese</span>
+                <p class="p-0">{{ data.title }}</p>
+                <area-badge :area="data.area"></area-badge>
             </div>
         </router-link>
     </div>

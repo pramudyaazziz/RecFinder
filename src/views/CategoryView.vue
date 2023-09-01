@@ -12,7 +12,7 @@ setNavigation(true);
 </script>
 
 <template>
-  <div class="container">
+  <div class="container pb-5">
     <header-app></header-app>
     <div class="row">
         <food-category></food-category>
