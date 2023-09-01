@@ -15,7 +15,7 @@ setNavigation(true);
 <template>
   <div class="container">
     <header-app></header-app>
-    <search-info></search-info>
+    <search-info text="Searc Food by Keyword"></search-info>
     <div class="row g-3">
       <card></card>
       <card></card>
