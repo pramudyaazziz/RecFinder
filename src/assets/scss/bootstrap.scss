@@ -1,0 +1,15 @@
+$red: #FF0000 ;
+$green: #00802B;
+$blue: #040BC5;
+$secondary: #CCCCCC;
+
+.bg-gray {
+    background-color: #4A4A4A;
+}
+
+.bg-navy {
+    background-color: #262E45;
+}
+
+@import "../../../node_modules/bootstrap/scss/bootstrap.scss";
+
