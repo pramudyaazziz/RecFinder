@@ -1,11 +1,23 @@
 <script setup>
   import { RouterLink } from 'vue-router';
-
   import { useSearchStore } from '../stores/search';
+  import { useFindFoodStore } from '../stores/findfood';
+  import { useKeywordStore } from '../stores/keyword';
+  import { ref } from 'vue';
 
   const { getSearch } = useSearchStore();
+  const { findFood } = useFindFoodStore();
+  const { setKeyword, getKeyword } = useKeywordStore();
 
   const search = getSearch();
+  const keyword = ref(getKeyword());
+
+  const submit = () => {
+    if (keyword.value) {
+      setKeyword(keyword.value);
+      findFood(keyword.value);
+    }
+  }
 </script>
 
 <template>
@@ -21,10 +33,10 @@
         </ul>
       </div>
       <div class="col-md search-bar" v-if="search">
-        <div class="d-flex" role="search">
-          <input class="form-control me-2 bg-black text-white" type="search" placeholder="Search food" aria-label="Search">
+        <form @submit.prevent="submit" class="d-flex" role="search">
+          <input class="form-control me-2 bg-black text-white" required v-model="keyword" type="search" placeholder="Search food" aria-label="Search">
           <button class="btn btn-outline-secondary search-button" type="submit">Search</button>
-        </div>
+        </form>
       </div>
   </nav>
 </template>

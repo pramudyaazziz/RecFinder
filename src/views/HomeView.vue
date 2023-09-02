@@ -4,29 +4,38 @@ import SearchInfo from '../components/SearchInfo.vue';
 import Card from '../components/CardFood.vue';
 import { useSearchStore } from '../stores/search';
 import { useNavigationStore } from '../stores/navigation';
+import { useFindFoodStore } from '../stores/findfood';
+import { useKeywordStore } from '../stores/keyword';
+import { ref, watchEffect  } from 'vue';
 
 const { setSearch } = useSearchStore();
 const { setNavigation } = useNavigationStore();
+const { getFood } = useFindFoodStore();
+const { getKeyword } = useKeywordStore();
 
 setSearch(true);
 setNavigation(true);
 
-const data = {
-    area: 'Japanese',
-    title: 'Teriyaki Chicken Casserole<'
-}
+const foods = ref(getFood());
+const keyword = ref(getKeyword());
+
+watchEffect (() => {
+  foods.value = getFood();
+});
+
+watchEffect (() => {
+  keyword.value = getKeyword();
+})
+
 </script>
 
 <template>
   <div class="container pb-3">
     <header-app></header-app>
-    <search-info text="Searc Food by Keyword"></search-info>
+    <search-info v-if="keyword" text="Search Food by Keyword" :keyword="keyword" :result="foods ? foods.length : 0" ></search-info>
     <div class="row g-3">
-      <card :data="data"></card>
-      <card :data="data"></card>
-      <card :data="data"></card>
-      <card :data="data"></card>
-      <card :data="data"></card>
+      <card v-for="food in foods" :data="food"></card>
     </div>
+    <h5 v-if="!foods && !keyword" class="text-center text-secondary mt-5">Try to search food</h5>
   </div> 
 </template>

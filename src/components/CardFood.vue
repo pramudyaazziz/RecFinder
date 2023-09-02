@@ -10,9 +10,9 @@
 
 <template>
     <div class="col-6 col-md-4 col-lg-2">
-        <router-link to="/recipe/3323" class="d-flex flex-column food-card bg-navy">
+        <router-link :to="'/recipe/' + data.id" class="d-flex flex-column food-card bg-navy">
             <div class="food-card-img">
-                <img src="https://www.shutterstock.com/image-photo/thai-food-salted-fish-spicy-260nw-148689017.jpg" alt="food_thumb">
+                <img :src="data.img">
             </div>
             <div class="food-card-body p-2">
                 <p class="p-0">{{ data.title }}</p>
