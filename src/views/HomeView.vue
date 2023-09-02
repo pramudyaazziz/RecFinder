@@ -18,7 +18,7 @@ const data = {
 </script>
 
 <template>
-  <div class="container pb-5">
+  <div class="container pb-3">
     <header-app></header-app>
     <search-info text="Searc Food by Keyword"></search-info>
     <div class="row g-3">

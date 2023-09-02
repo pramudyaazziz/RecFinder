@@ -41,7 +41,7 @@
 </script>
 
 <template>
-    <div class="container pb-5">
+    <div class="container pb-3">
         <header-app></header-app>
         <header-recipe :title-food="data.title" :area-food="data.area"></header-recipe>
         

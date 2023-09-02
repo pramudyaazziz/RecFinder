@@ -16,7 +16,7 @@ const data = {
 </script>
 
 <template>
-    <div class="container pb-5">
+    <div class="container pb-3">
         <header-app></header-app>
         <div class="text-end">
             <back-button></back-button>
