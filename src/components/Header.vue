@@ -11,7 +11,9 @@ const navigation = getNavigation();
 
 <template>
     <header>
-        <logo></logo>
+        <div class="d-flex justify-content-center d-md-block">
+            <logo></logo>
+        </div>
         <navigation v-if="navigation"></navigation>
     </header>
 </template>

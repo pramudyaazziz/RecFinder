@@ -3,7 +3,7 @@
 </script>
 
 <template>
-    <router-link to="/" class="header-logo d-flex justify-content-center d-md-block">
+    <router-link to="/" class="header-logo">
         <img src="/logo.png" alt="Logo">
     </router-link>
 </template>
