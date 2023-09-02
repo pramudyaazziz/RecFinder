@@ -1,12 +1,12 @@
 <script setup>
   import { RouterLink } from 'vue-router';
   import { useSearchStore } from '../stores/search';
-  import { useFindFoodStore } from '../stores/findfood';
+  import { useFindByKeywordStore } from '../stores/findByKeyword';
   import { useKeywordStore } from '../stores/keyword';
   import { ref } from 'vue';
 
   const { getSearch } = useSearchStore();
-  const { findFood } = useFindFoodStore();
+  const { findFood } = useFindByKeywordStore();
   const { setKeyword, getKeyword } = useKeywordStore();
 
   const search = getSearch();

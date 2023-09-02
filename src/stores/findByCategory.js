@@ -2,19 +2,19 @@ import { defineStore } from 'pinia';
 import { ref } from 'vue';
 import axios from 'axios';
 
-export const useFindFoodStore = defineStore('food', () => {
-  let _food = ref(null);
+export const useFindByCategoryStore = defineStore('foodCategory', () => {
+  let _foodCategory = ref(null);
 
-  const findFood = async (keyword) => {
-     const url = `https://www.themealdb.com/api/json/v1/1/search.php?s=${keyword}`;
+  const findFoodByCategory = async (category) => {
+     const url = `https://www.themealdb.com/api/json/v1/1/filter.php?c=${category}`;
 
      try {
         const response = await axios.get(url);
         if (response.data.meals == null) {
-            return _food.value = null;
+            return _foodCategory.value = null;
         }
 
-        _food.value = response.data.meals.map((data) => {
+        _foodCategory.value = response.data.meals.map((data) => {
             return formatData(data)
         });
         
@@ -23,21 +23,21 @@ export const useFindFoodStore = defineStore('food', () => {
      }
   };
 
-  const getFood = () => {
-     return _food.value
+  const getFoodByCategory = () => {
+     return _foodCategory.value
   }
 
   const formatData = (data) => {
     return {
         id: data.idMeal,
-        area: data.strArea,
+        area: data.strArea ?? null,
         title: data.strMeal,
         img: data.strMealThumb
     }
   }
 
   return {
-    getFood,
-    findFood
+    getFoodByCategory,
+    findFoodByCategory
   };
 });

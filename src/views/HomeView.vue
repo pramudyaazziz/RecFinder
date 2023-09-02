@@ -4,13 +4,13 @@ import SearchInfo from '../components/SearchInfo.vue';
 import Card from '../components/CardFood.vue';
 import { useSearchStore } from '../stores/search';
 import { useNavigationStore } from '../stores/navigation';
-import { useFindFoodStore } from '../stores/findfood';
+import { useFindByKeywordStore } from '../stores/findByKeyword';
 import { useKeywordStore } from '../stores/keyword';
 import { ref, watchEffect  } from 'vue';
 
 const { setSearch } = useSearchStore();
 const { setNavigation } = useNavigationStore();
-const { getFood } = useFindFoodStore();
+const { getFood } = useFindByKeywordStore();
 const { getKeyword } = useKeywordStore();
 
 setSearch(true);
